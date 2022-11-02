@@ -9,5 +9,7 @@
       "automerge": true,
       "automergeType": "pr"
     }
-  ]
+  ],
+  "enabledManagers": ["npm"],
+  "updateTypes": "patch"
 }
