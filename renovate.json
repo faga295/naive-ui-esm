@@ -10,6 +10,6 @@
       "automergeType": "pr"
     }
   ],
-  "enabledManagers": ["npm"],
-  "updateTypes": "patch"
+  "enabledManagers": ["npm"]
+  
 }
