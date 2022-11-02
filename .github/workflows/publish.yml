@@ -28,7 +28,7 @@ jobs:
           pnpm install
           pnpm build
       
-       - name: Read package.json
+      - name: Read package.json
         id: package-json
         run: |
           content=`cat ./package.json`
