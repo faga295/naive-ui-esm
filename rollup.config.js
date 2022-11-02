@@ -1,7 +1,9 @@
 const { defineConfig } = require("rollup")
 const nodeResolve = require('@rollup/plugin-node-resolve').default
 const path = require('path')
-const  { default: commonjs } = require("@rollup/plugin-commonjs")
+const  { commonjs } = require("@rollup/plugin-commonjs").default
+const { terser } = require('rollup-plugin-terser')
+
 const extensions = ['.mjs', '.js', '.json', '.ts']
 
 module.exports =  defineConfig({
@@ -10,7 +12,8 @@ module.exports =  defineConfig({
   ],
   plugins:[
     nodeResolve({ extensions }),
-    commonjs()
+    commonjs(),
+    terser()
   ],
   output: {
     file: path.resolve(__dirname, './dist/index.mjs'),
