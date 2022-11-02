@@ -3,5 +3,8 @@
   "extends": [
     "config:base"
   ],
-  "bumpVersion": "patch" 
+  "bumpVersion": "patch",
+  "js": {
+    "bumpVersion": "patch"
+  }
 }
