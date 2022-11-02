@@ -3,8 +3,11 @@
   "extends": [
     "config:base"
   ],
-  "bumpVersion": "patch",
-  "js": {
-    "bumpVersion": "patch"
-  }
+ "patch": {
+  "packageRules": [
+    {
+      "matchPackageNames":["naive-ui"]
+    }
+  ]
+ } 
 }
