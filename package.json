@@ -13,6 +13,8 @@
   "keywords": [],
   "sideEffects": false,
   "module": "./dist/index.mjs",
+  "jsdelivr": "./dist/index.mjs",
+  "unpkg": "./dist/index.mjs",
   "scripts": {
     "build": "rollup -c rollup.config.js"
   },
