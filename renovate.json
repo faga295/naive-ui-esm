@@ -10,6 +10,13 @@
       "automergeType": "pr"
     }
   ],
-  "enabledManagers": ["npm"]
+  "enabledManagers": ["npm"],
+  "patch": {
+    "enabled": true
+  },
+  "minor": {
+    "enabled": true
+  }
+  
   
 }
