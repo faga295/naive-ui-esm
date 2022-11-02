@@ -1,7 +1,6 @@
 {
   "name": "naive-ui-esm",
   "version": "0.0.1",
-  "packageManager": "pnpm@7.12.0",
   "description": "",
   "author": "faga295",
   "license": "MIT",
@@ -13,9 +12,9 @@
   "keywords": [],
   "sideEffects": false,
   "files": ["dist"],
-  "module": "./dist/index.mjs",
-  "jsdelivr": "./dist/index.mjs",
-  "unpkg": "./dist/index.mjs",
+  "module": "dist/index.mjs",
+  "jsdelivr": "dist/index.mjs",
+  "unpkg": "dist/index.mjs",
   "scripts": {
     "build": "rollup -c rollup.config.js"
   },
@@ -26,7 +25,7 @@
     "rollup-plugin-terser": "^7.0.2"
   },
   "dependencies": {
-    "naive-ui": "^2.10.0",
+    "naive-ui": "^2.0.0",
     "vue": "^3.2.41"
   }
 }
