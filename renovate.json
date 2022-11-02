@@ -16,7 +16,9 @@
   },
   "minor": {
     "enabled": true
-  }
+  },
+  "separateMinorPatch": true
+
   
   
 }
