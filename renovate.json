@@ -5,7 +5,8 @@
   ],
   "packageRules": [
     {
-      "matchPackageNames": ["naive-ui"]
+      "matchPackageNames": ["naive-ui"],
+      "matchUpdateTypes": ["patch", "major", "minor"]
     }
   ]
 
