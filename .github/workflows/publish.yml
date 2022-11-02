@@ -1,4 +1,4 @@
-name: CI
+name: publish
 
 on:
   push:
@@ -24,10 +24,10 @@ jobs:
           node-version: 16.x
           cache: pnpm
 
-      - uses: pnpm install
+      - run: pnpm install
 
       - name: Build
-        uses: pnpm build
+        run: pnpm build
 
       - uses: JS-DevTools/npm-publish@v1
         with:
