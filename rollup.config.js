@@ -1,7 +1,7 @@
 const { defineConfig } = require("rollup")
 const nodeResolve = require('@rollup/plugin-node-resolve').default
 const path = require('path')
-const  { commonjs } = require("@rollup/plugin-commonjs").default
+const  { default: commonjs } = require("@rollup/plugin-commonjs")
 const { terser } = require('rollup-plugin-terser')
 
 const extensions = ['.mjs', '.js', '.json', '.ts']
