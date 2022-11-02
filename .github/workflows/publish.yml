@@ -25,6 +25,15 @@ jobs:
         run: |
           pnpm install
           pnpm build
+      
+      - name: package.json info
+        id: info
+        uses: jaywcjlove/github-action-package@main
+        with:
+          data: |
+            {
+              "version": "${{steps.info.inputs.data.dependencies.naive-ui}}"
+            }
 
       - uses: JS-DevTools/npm-publish@v1
         with:
