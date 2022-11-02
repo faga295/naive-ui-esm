@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+env:
+  GITHUB_TOKEN: ${{ github.token }}
 
 jobs:
   publish:
@@ -26,16 +28,28 @@ jobs:
           pnpm install
           pnpm build
       
-      - name: package.json info
-        id: info
-        uses: jaywcjlove/github-action-package@main
-        with:
-          data: |
-            {
-              "version": "${{steps.info.inputs.data.dependencies.naive-ui}}"
-            }
+      - name: Read package.json
+        uses: dutscher/read-package-json-endpoint-actions@v1.33.7
+        id: package-json
 
-      - run: echo "${{steps.info.inputs}}" 
+      - name: Update package.json version
+        uses: jossef/action-set-json-field@v2.1
+        with:
+          file: package.json
+          field: version
+          value: ${{ steps.package-json.outputs.dependencies.naive-ui }}
+      
+      - name: Commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A
+          git commit -m "chore: update package version to ${{ steps.package-json.outputs.dependencies.naive-ui }}"
+
+      - name: Push changes
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ github.token }}
 
       - uses: JS-DevTools/npm-publish@v1
         with:
