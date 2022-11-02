@@ -6,7 +6,8 @@
  "patch": {
   "packageRules": [
     {
-      "matchPackageNames":["naive-ui"]
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "automerge": true
     }
   ]
  } 
