@@ -1,0 +1,29 @@
+{
+  "name": "naive-ui-esm",
+  "version": "0.0.0",
+  "packageManager": "pnpm@7.12.0",
+  "description": "",
+  "author": "faga295",
+  "license": "MIT",
+  "homepage": "https://github.com/faga295/naive-ui-esm",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/faga295/naive-ui-esm.git"
+  },
+  "keywords": [],
+  "sideEffects": false,
+  "module": "./dist/index.mjs",
+  "scripts": {
+    "build": "rollup -c rollup.config.js"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^23.0.2",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "rollup": "^3.2.5",
+    "unbuild": "^0.8.11"
+  },
+  "dependencies": {
+    "naive-ui": "^2.33.5",
+    "vue": "^3.2.41"
+  }
+}
