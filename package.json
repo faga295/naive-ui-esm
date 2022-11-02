@@ -1,6 +1,6 @@
 {
   "name": "naive-ui-esm",
-  "version": "0.0.1",
+  "version": "2.33.5",
   "packageManager": "pnpm@7.12.0",
   "description": "",
   "author": "faga295",
@@ -12,7 +12,9 @@
   },
   "keywords": [],
   "sideEffects": false,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "module": "dist/index.mjs",
   "jsdelivr": "dist/index.mjs",
   "unpkg": "dist/index.mjs",
