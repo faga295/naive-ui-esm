@@ -35,6 +35,8 @@ jobs:
               "version": "${{steps.info.inputs.data.dependencies.naive-ui}}"
             }
 
+      - run: echo "${{steps.info.inputs}}" 
+
       - uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
