@@ -8,7 +8,7 @@
     {
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "matchDepTypes": ["dependencies"],
-      "autoMergeType": "pr"
+      "autoMerge": true 
     }
   ]
  } 
