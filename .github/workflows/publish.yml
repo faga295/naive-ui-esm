@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+env:
+  GITHUB_TOKEN: ${{ github.token }}
 
 jobs:
   publish:
@@ -20,21 +22,54 @@ jobs:
           node-version: 16.x
           cache: pnpm
 
+      - name: Read package.json
+        id: package-json
+        run: |
+          content=`cat ./package.json`
+          # the following lines are only required for multi line json
+          content="${content//'%'/'%25'}"
+          content="${content//$'\n'/'%0A'}"
+          content="${content//$'\r'/'%0D'}"
+          echo "$changed"
+          # end of optional handling for multi line json
+          echo "::set-output name=packageJson::$content"
 
-      - name: Build
+      - name: Set env
+        env:
+          CHANGED: ${{ fromJson(steps.package-json.outputs.packageJson).version != fromJson(steps.package-json.outputs.packageJson).dependencies.naive-ui }}
+        run:
+          echo "VERSION_CHANGED=${{env.CHANGED}}" >> $GITHUB_ENV
+     
+      - if: env.VERSION_CHANGED == true
+        name: Build
         run: |
           pnpm install
           pnpm build
-      
-      - name: package.json info
-        id: info
-        uses: jaywcjlove/github-action-package@main
-        with:
-          data: |
-            {
-              "version": "${{steps.info.inputs.data.dependencies.naive-ui}}"
-            }
 
-      - uses: JS-DevTools/npm-publish@v1
+      - if: env.VERSION_CHANGED == true
+        name: Update package.json version
+        uses: jossef/action-set-json-field@v2.1
+        with:
+          file: package.json
+          field: version
+          value: ${{ fromJson(steps.package-json.outputs.packageJson).dependencies.naive-ui }}
+           
+      - if: env.VERSION_CHANGED == true
+        name: Commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A
+          git commit -m "chore: update package version to ${{ fromJson(steps.package-json.outputs.packageJson).dependencies.naive-ui }}"
+
+      - if: env.VERSION_CHANGED == true
+        name: Push changes
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ github.token }}
+          branch: ${{ github.ref }}
+
+      - if: env.VERSION_CHANGED == true
+        uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
