@@ -3,13 +3,13 @@ lockfileVersion: 5.4
 specifiers:
   '@rollup/plugin-commonjs': ^23.0.2
   '@rollup/plugin-node-resolve': ^15.0.0
-  naive-ui: 2.33.5
+  naive-ui: 2.34.1
   rollup: ^2.75.6
   rollup-plugin-terser: ^7.0.2
   vue: ^3.2.41
 
 dependencies:
-  naive-ui: 2.33.5_vue@3.2.41
+  naive-ui: 2.34.1_vue@3.2.41
   vue: 3.2.41
 
 devDependencies:
@@ -177,6 +177,10 @@ packages:
   /@types/estree/1.0.0:
     resolution: {integrity: sha512-WulqXMDUTYAXCjZnk6JtIHPigp55cVtDgDrO2gHRwhyJto21+1zbVCtOYB2L1F9w4qCQ0rOGWBnBe0FNTiEJIQ==}
     dev: true
+
+  /@types/katex/0.14.0:
+    resolution: {integrity: sha512-+2FW2CcT0K3P+JMR8YG846bmDwplKUTsWgT2ENwdQ1UdVfRk3GQrh6Mi4sTopy30gI8Uau5CEqHTDZ6YvWIUPA==}
+    dev: false
 
   /@types/lodash-es/4.17.6:
     resolution: {integrity: sha512-R+zTeVUKDdfoRxpAryaQNRKk3105Rrgx2CFRClIgRGaqDTdjsm8h6IYA8ir584W3ePzkZfst5xIgDwYrlh9HLg==}
@@ -520,13 +524,14 @@ packages:
       brace-expansion: 2.0.1
     dev: true
 
-  /naive-ui/2.33.5_vue@3.2.41:
-    resolution: {integrity: sha512-O87zwOduut3Xk9NzGIX+LZYr6sW/Y0oGuNJ6T2dka+14CtHD9iidi8gdxg6obhMpzdwa3SnlxO7nzDLqmXVUwA==}
+  /naive-ui/2.34.1_vue@3.2.41:
+    resolution: {integrity: sha512-4CbVGt4qJ+biEas2Nyup4ORQSgUn1edF/8p/NzTD/LlGgOqGUa/wC76MaApXArF9cPaEYJYR0NdpET9i0YCM7A==}
     peerDependencies:
       vue: ^3.0.0
     dependencies:
       '@css-render/plugin-bem': 0.15.11_css-render@0.15.11
       '@css-render/vue3-ssr': 0.15.11_vue@3.2.41
+      '@types/katex': 0.14.0
       '@types/lodash': 4.14.187
       '@types/lodash-es': 4.17.6
       async-validator: 4.2.5
