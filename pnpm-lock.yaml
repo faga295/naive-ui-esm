@@ -3,13 +3,13 @@ lockfileVersion: 5.4
 specifiers:
   '@rollup/plugin-commonjs': ^23.0.2
   '@rollup/plugin-node-resolve': ^15.0.0
-  naive-ui: 2.34.1
+  naive-ui: 2.34.3
   rollup: ^2.75.6
   rollup-plugin-terser: ^7.0.2
   vue: ^3.2.41
 
 dependencies:
-  naive-ui: 2.34.1_vue@3.2.41
+  naive-ui: 2.34.3_vue@3.2.41
   vue: 3.2.41
 
 devDependencies:
@@ -524,8 +524,8 @@ packages:
       brace-expansion: 2.0.1
     dev: true
 
-  /naive-ui/2.34.1_vue@3.2.41:
-    resolution: {integrity: sha512-4CbVGt4qJ+biEas2Nyup4ORQSgUn1edF/8p/NzTD/LlGgOqGUa/wC76MaApXArF9cPaEYJYR0NdpET9i0YCM7A==}
+  /naive-ui/2.34.3_vue@3.2.41:
+    resolution: {integrity: sha512-fUMr0dzb/iGsOTWgoblPVobY5X5dihQ1eam5dA+H74oyLYAvgX4pL96xQFPBLIYqvyRFBAsN85kHN5pLqdtpxA==}
     peerDependencies:
       vue: ^3.0.0
     dependencies:
