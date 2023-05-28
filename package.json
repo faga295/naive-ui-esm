@@ -23,7 +23,7 @@
     "build": "rollup -c rollup.config.js"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^23.0.2",
+    "@rollup/plugin-commonjs": "^25.0.0",
     "@rollup/plugin-node-resolve": "^15.0.0",
     "rollup": "^2.75.6",
     "rollup-plugin-terser": "^7.0.2"
