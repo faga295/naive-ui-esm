@@ -30,7 +30,7 @@
     "rollup-plugin-terser": "^7.0.2"
   },
   "dependencies": {
-    "naive-ui": "2.11.8",
+    "naive-ui": "2.11.9",
     "vue": "^3.2.41"
   }
 }
