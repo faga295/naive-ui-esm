@@ -32,14 +32,13 @@ jobs:
           content="${content//$'\r'/'%0D'}"
           echo "$changed"
           # end of optional handling for multi line json
-          echo "::set-output name=packageJson::$content"
+          echo "name=packageJson::$content" >> $GITHUB_OUTPUT
 
       - name: Set env
         env:
           CHANGED: ${{ fromJson(steps.package-json.outputs.packageJson).version != fromJson(steps.package-json.outputs.packageJson).dependencies.naive-ui }}
-        run:
-          echo "VERSION_CHANGED=${{env.CHANGED}}" >> $GITHUB_ENV
-     
+        run: echo "VERSION_CHANGED=${{env.CHANGED}}" >> $GITHUB_ENV
+
       - if: env.VERSION_CHANGED == true
         name: Build
         run: |
@@ -53,7 +52,7 @@ jobs:
           file: package.json
           field: version
           value: ${{ fromJson(steps.package-json.outputs.packageJson).dependencies.naive-ui }}
-           
+
       - if: env.VERSION_CHANGED == true
         name: Commit files
         run: |
