@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       naive-ui:
-        specifier: 2.11.11
-        version: 2.11.11(vue-router@4.5.0(vue@3.5.13))(vue@3.5.13)
+        specifier: 2.11.12
+        version: 2.11.12(vue-router@4.5.0(vue@3.5.13))(vue@3.5.13)
       vue:
         specifier: ^3.2.41
         version: 3.5.13
@@ -288,8 +288,8 @@ packages:
     resolution: {integrity: sha512-lKwV/1brpG6mBUFHtb7NUmtABCb2WZZmm2wNiOA5hAb8VdCS4B3dtMWyvcoViccwAW/COERjXLt0zP1zXUN26g==}
     engines: {node: '>=10'}
 
-  naive-ui@2.11.11:
-    resolution: {integrity: sha512-rXepBKkdsdM6UkEuNbTPkmup+EbWY5i3kZOb54PSkc97o+DmeCTXY9UOTZYXDHks2522sA6T5bgLA/RWmJSGpA==}
+  naive-ui@2.11.12:
+    resolution: {integrity: sha512-VqmEsJP2a2zwuEAhSPWGPiOkhfP/Ak4qrUEhJu5HOZO1iNloM3kg444vt7cHN+KYdGQOKynR51/pT6YYv7a78Q==}
     peerDependencies:
       vue: ^3.0.0
       vue-router: ^4.0.0
@@ -672,7 +672,7 @@ snapshots:
     dependencies:
       brace-expansion: 2.0.1
 
-  naive-ui@2.11.11(vue-router@4.5.0(vue@3.5.13))(vue@3.5.13):
+  naive-ui@2.11.12(vue-router@4.5.0(vue@3.5.13))(vue@3.5.13):
     dependencies:
       '@css-render/plugin-bem': 0.15.14(css-render@0.15.14)
       '@css-render/vue3-ssr': 0.15.14(vue@3.5.13)
