@@ -77,6 +77,6 @@ jobs:
           branch: ${{ github.ref }}
 
       - if: env.VERSION_CHANGED == 'true'
-        uses: JS-DevTools/npm-publish@v1
+        uses: JS-DevTools/npm-publish@v3
         with:
           token: ${{ secrets.NPM_TOKEN }}
