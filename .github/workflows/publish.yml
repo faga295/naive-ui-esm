@@ -48,13 +48,12 @@ jobs:
           echo "${{env.CHANGED}}"
           echo "${{env.VERSION_CHANGED}}"
 
-      - if: env.VERSION_CHANGED == true
+      - if: env.VERSION_CHANGED == 'true'
         name: Build
         run: |
-          pnpm install
           pnpm build
 
-      - if: env.VERSION_CHANGED == true
+      - if: env.VERSION_CHANGED == 'true'
         name: Update package.json version
         uses: jossef/action-set-json-field@v2.1
         with:
@@ -62,7 +61,7 @@ jobs:
           field: version
           value: ${{ fromJson(steps.package-json.outputs.packageJson).dependencies.naive-ui }}
 
-      - if: env.VERSION_CHANGED == true
+      - if: env.VERSION_CHANGED == 'true'
         name: Commit files
         run: |
           git config --local user.email "action@github.com"
@@ -70,14 +69,14 @@ jobs:
           git add -A
           git commit -m "chore: update package version to ${{ fromJson(steps.package-json.outputs.packageJson).dependencies.naive-ui }}"
 
-      - if: env.VERSION_CHANGED == true
+      - if: env.VERSION_CHANGED == 'true'
         name: Push changes
         uses: ad-m/github-push-action@v0.6.0
         with:
           github_token: ${{ github.token }}
           branch: ${{ github.ref }}
 
-      - if: env.VERSION_CHANGED == true
+      - if: env.VERSION_CHANGED == 'true'
         uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
