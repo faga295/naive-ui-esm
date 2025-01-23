@@ -1,6 +1,7 @@
 {
   "name": "naive-ui-esm",
   "version": "2.41.0",
+  "packageManager": "pnpm@9.12.3",
   "description": "",
   "author": "faga295",
   "license": "MIT",
