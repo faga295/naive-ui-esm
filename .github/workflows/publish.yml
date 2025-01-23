@@ -32,6 +32,7 @@ jobs:
           content="${content//$'\r'/'%0D'}"
           echo "$changed"
           # end of optional handling for multi line json
+          echo "$content"
           echo "packageJson=$content" >> $GITHUB_OUTPUT
 
       - name: Set env
