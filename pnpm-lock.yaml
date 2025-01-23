@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       naive-ui:
-        specifier: 2.15.1
-        version: 2.15.1(vue@3.5.13)
+        specifier: 2.15.2
+        version: 2.15.2(vue@3.5.13)
       vue:
         specifier: ^3.2.41
         version: 3.5.13
@@ -285,8 +285,8 @@ packages:
     resolution: {integrity: sha512-lKwV/1brpG6mBUFHtb7NUmtABCb2WZZmm2wNiOA5hAb8VdCS4B3dtMWyvcoViccwAW/COERjXLt0zP1zXUN26g==}
     engines: {node: '>=10'}
 
-  naive-ui@2.15.1:
-    resolution: {integrity: sha512-UgUw9CvA5HYnMjwEoyycZind7lRlPFSuOPennCxXwejGppip4WAtQYiY72SLK8Ui8O2xJy4lZRtbD7sEo0YKFg==}
+  naive-ui@2.15.2:
+    resolution: {integrity: sha512-gcfefDgvfzDRGGyM99m7xKTsmZwa7b6g7SQ/NDdJVMIEGA/QLC4JcEcrxti5VUX3inHU3mFGi0g5ZBCBg+HTKQ==}
     peerDependencies:
       vue: ^3.0.0
 
@@ -661,7 +661,7 @@ snapshots:
     dependencies:
       brace-expansion: 2.0.1
 
-  naive-ui@2.15.1(vue@3.5.13):
+  naive-ui@2.15.2(vue@3.5.13):
     dependencies:
       '@css-render/plugin-bem': 0.15.14(css-render@0.15.14)
       '@css-render/vue3-ssr': 0.15.14(vue@3.5.13)
